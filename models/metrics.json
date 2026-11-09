@@ -1,0 +1,126 @@
+{
+  "trained_at": "2026-11-07 13:29",
+  "chosen_model": "Random forest",
+  "test": {
+    "accuracy": 0.8546682325308279,
+    "precision": 0.861174573310039,
+    "recall": 0.7248868778280543,
+    "f1": 0.7871752349364289,
+    "roc_auc": 0.9252208189737597,
+    "confusion_matrix": [
+      [
+        13969,
+        1033
+      ],
+      [
+        2432,
+        6408
+      ]
+    ]
+  },
+  "hypotheses": [
+    {
+      "id": "H1",
+      "statement": "The model will predict cancellations with at least 80% accuracy.",
+      "evidence": "Test accuracy 85.5%",
+      "result": "Accepted"
+    },
+    {
+      "id": "H2",
+      "statement": "Bookings made more than 69 days ahead (the median) cancel more often than bookings made closer to arrival.",
+      "evidence": "49.0% vs 25.2%, chi-square p < 0.001",
+      "result": "Accepted"
+    },
+    {
+      "id": "H3",
+      "statement": "Guests with special or parking requests cancel less often than guests without them.",
+      "evidence": "20.4% vs 50.0%, chi-square p < 0.001",
+      "result": "Accepted"
+    }
+  ],
+  "grid_results": [
+    {
+      "settings": "{'model__max_depth': 15, 'model__min_samples_leaf': 1}",
+      "cv_accuracy": 0.8274770272355403
+    },
+    {
+      "settings": "{'model__max_depth': 15, 'model__min_samples_leaf': 3}",
+      "cv_accuracy": 0.8263655154812912
+    },
+    {
+      "settings": "{'model__max_depth': 25, 'model__min_samples_leaf': 1}",
+      "cv_accuracy": 0.8533035656379822
+    },
+    {
+      "settings": "{'model__max_depth': 25, 'model__min_samples_leaf': 3}",
+      "cv_accuracy": 0.8422095504421705
+    }
+  ],
+  "baseline_logistic_regression": {
+    "accuracy": 0.8096636188239241,
+    "precision": 0.8414285714285714,
+    "recall": 0.5996606334841629,
+    "f1": 0.7002642007926024,
+    "roc_auc": 0.8490878063920286,
+    "confusion_matrix": [
+      [
+        14003,
+        999
+      ],
+      [
+        3539,
+        5301
+      ]
+    ]
+  },
+  "always_not_canceled_accuracy": 0.6292257360959651,
+  "cv_accuracy": 0.8533035656379822,
+  "best_params": {
+    "model__max_depth": 25,
+    "model__min_samples_leaf": 1
+  },
+  "top_features": [
+    [
+      "lead_time",
+      0.15295051127939227
+    ],
+    [
+      "deposit_type_Non Refund",
+      0.12785224600049613
+    ],
+    [
+      "deposit_type_No Deposit",
+      0.10265737553253639
+    ],
+    [
+      "adr",
+      0.09827643632457547
+    ],
+    [
+      "total_of_special_requests",
+      0.07531145786147757
+    ],
+    [
+      "previous_cancellations",
+      0.05362229687887968
+    ],
+    [
+      "stays_in_week_nights",
+      0.04416168656143487
+    ],
+    [
+      "market_segment_Online TA",
+      0.030419370560341684
+    ],
+    [
+      "required_car_parking_spaces",
+      0.02921751974382815
+    ],
+    [
+      "stays_in_weekend_nights",
+      0.0275463117607202
+    ]
+  ],
+  "train_rows": 95367,
+  "test_rows": 23842
+}

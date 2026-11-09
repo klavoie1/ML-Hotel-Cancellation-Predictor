@@ -1,0 +1,7 @@
+pandas
+scikit-learn==1.9.1
+scipy
+joblib
+streamlit
+plotly
+pytest
